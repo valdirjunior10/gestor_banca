@@ -3,6 +3,7 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import VueRouter from 'vue-router';
 import VueGoogleCharts from 'vue-google-charts';
+import VueResource from 'vue-resource';
 
 import { routes } from '../src/Routes';
 const router = new VueRouter({
@@ -12,6 +13,7 @@ const router = new VueRouter({
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueGoogleCharts)
+Vue.use(VueResource);
 
 Vue.config.productionTip = false
 
