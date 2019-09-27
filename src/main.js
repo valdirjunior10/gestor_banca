@@ -6,6 +6,8 @@ import VueGoogleCharts from 'vue-google-charts';
 import VueResource from 'vue-resource';
 
 import { routes } from '../src/Routes';
+import 'bootstrap-css-only/css/bootstrap.min.css'
+import 'mdbvue/build/css/mdb.css'
 const router = new VueRouter({
   routes
 })

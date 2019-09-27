@@ -4,18 +4,6 @@
       <div class="card-body">
         <div class="row alert alert-info">
           <div class="form-group col-md-4"></div>
-          <div class="form-group col-md-2">
-            <label>Data Inicial</label>
-            <input type="date" class="form-control" name="dataInicial" v-model="dataAtual" />
-          </div>
-          <div class="form-group col-md-2">
-            <label>Data Final</label>
-            <input type="date" class="form-control" name="dataFinal" v-model="dataAtual" />
-          </div>
-
-          <div class="form-group col-md-2">
-            <button style="margin-top: 11%;" class="btn btn-danger" placeholder="Password">Filtrar</button>
-          </div>
         </div>
       </div>
     </div>
@@ -116,7 +104,8 @@
           <h2 class="text-center"></h2>
         </div>
         <div class="card card-body">
-          <GChart type="ColumnChart" :data="chartData" :options="chartOptions" />
+          <!-- <GChart type="ColumnChart" :data="chartData" :options="chartOptions" /> -->
+          <ChartBar></ChartBar>
         </div>
       </div>
     </div>
@@ -124,33 +113,14 @@
 </template>
 
 <script>
-import { GChart } from "vue-google-charts";
+// import { GChart } from "vue-google-charts";
+import ChartBar from "../components/ChartBar.vue";
 import moment from "moment";
 
 export default {
   components: {
-    GChart
-  },
-
-  data() {
-    return {
-      chartsLib: null,
-      dataAtual: moment(new Date()).format("Y-MM-D"),
-      chartData: [
-        ["Year", "Receitas", "Despesas", "Lucro"],
-        ["Julho", 1000, 500, 500],
-        ["Agosto", 600, 460, 140],
-        ["Setembro", 1500, 1120, 380]
-      ],
-      chartOptions: {
-        colors: ["#90EE90", "#FF0000", "#B0E0E6"],
-        title: "Histórico dos ultimos 3 meses",
-        chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017",
-        }
-      }
-    };
+    // GChart
+    ChartBar
   }
 };
 </script>
