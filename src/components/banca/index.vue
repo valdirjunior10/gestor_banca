@@ -8,23 +8,11 @@
           <b-modal ref="my-modal" hide-footer title="Cadastro de banca">
             <form @submit.prevent="cadastra()">
               <div class="form-group">
-                <label>Nome</label>
-                <input
-                  type="text"
-                  name="nome_cadastro"
-                  class="form-control"
-                  v-model="objBancaCadastro.nome"
-                />
+                <mdbInput label="Nome" name="nome_cadastro" required v-model="objBancaCadastro.nome" />                   
               </div>
 
               <div class="form-group">
-                <label>Saldo Inicial</label>
-                <input
-                  type="text"
-                  name="saldo_cadastro"
-                  class="form-control"
-                  v-model="objBancaCadastro.valor_inicial"
-                />
+                <mdbInput label="Saldo Inicial" name="saldo_cadastro" required v-model="objBancaCadastro.valor_inicial" />         
               </div>
 
               <button type="submit" class="btn btn-primary" block @click="hideModal">Salvar</button>
@@ -55,19 +43,12 @@
 
       <div class="col-6">
         <form @submit.prevent="edita()">
-          <div class="form-group">
-            <label>Nome</label>
-            <input type="text" name="nome_editar" class="form-control" v-model="objBancaEdita.nome" />
+          <div class="form-group">            
+            <mdbInput label="Nome" name="nome_editar" required v-model="objBancaEdita.nome" />            
           </div>
 
           <div class="form-group">
-            <label>Saldo Inicial</label>
-            <input
-              type="text"
-              name="saldo_editar"
-              class="form-control"
-              v-model="objBancaEdita.valor_inicial"
-            />
+            <mdbInput label="Saldo Inicial" name="saldo_editar" required v-model="objBancaEdita.valor_inicial" />                        
           </div>
 
           <button class="btn btn-primary">Salvar</button>
@@ -80,8 +61,13 @@
 
 <script>
 import Banca from "../../models/Banca";
+import {mdbInput} from 'mdbvue';
 export default {
   name: "bancaIndex",
+
+  components: {
+    mdbInput
+  },
 
   data() {
     return {
@@ -109,7 +95,7 @@ export default {
         });
     },
 
-    cadastr() {
+    cadastra() {
       let dados = {
         nome: this.objBancaCadastro.nome,
         valor_inicial: this.objBancaCadastro.valor_inicial
@@ -118,8 +104,11 @@ export default {
       this.$http
         .post("http://127.0.0.1:8000/api/banca", dados)
         .then(response => {
+          console.log(response.data);
           if (response.data.status == "OK") {
             alert("Banca cadastrada com sucesso!");
+            this.objBancaCadastro.nome = '';
+            this.objBancaCadastro.valor_inicial = '';
           }
         });
     },

@@ -1,7 +1,15 @@
 <template>
-  <mdb-container>
-    <mdb-bar-chart :data="barChartData" :options="barChartOptions" :width="1800" :height="500" style="margin-left: -35%;"></mdb-bar-chart>
-  </mdb-container>
+  <div class="container">
+    <mdb-container>
+      <mdb-bar-chart
+        :data="barChartData"
+        :options="barChartOptions"
+        :width="1000"
+        :height="500"
+        
+      ></mdb-bar-chart>
+    </mdb-container>
+  </div>
 </template>
 
 <script>
@@ -54,7 +62,7 @@ export default {
         labels: this.dadosChart()[0],
         datasets: [
           {
-            label: "# of Votes",
+            label: "Rendimento",
             data: this.dadosChart()[1],
             backgroundColor: this.dadosChart()[2],
             borderColor: this.dadosChart()[3],
@@ -65,7 +73,7 @@ export default {
       barChartOptions: {
         responsive: false,
         maintainAspectRatio: false,
-  
+
         scales: {
           xAxes: [
             {

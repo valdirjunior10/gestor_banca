@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <b-navbar toggleable="lg" type="dark" variant="info">
        <b-navbar-nav>
         <router-link to="/" class="btn btn-info glyphicon glyphicon-envelope"><b>Manager</b><small>STACK</small></router-link>
@@ -15,7 +15,7 @@
           >Gerenciar Bancas</router-link>
 
           <router-link to="/objetivos" class="btn btn-info glyphicon glyphicon-envelope">Objetivos</router-link>
-          <router-link to="/movimentacao" class="btn btn-info glyphicon glyphicon-envelope">Movimentação</router-link>
+          <router-link to="/lancamentos" class="btn btn-info glyphicon glyphicon-envelope">Lancamentos</router-link>
 
           <!-- <b-nav-item-dropdown text="Lang" right>
               <b-dropdown-item href="#">EN</b-dropdown-item> 
