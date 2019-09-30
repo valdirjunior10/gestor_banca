@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <mdb-datatable
       :data="data"
       striped
@@ -28,8 +28,9 @@ export default {
   created() {
     var url = this.url;
     this.$http.get(url).then(response => {
+      let dados = [];
       response.data.forEach(element => {
-        this.rows.push({
+        dados.push({
           confronto: element.confronto,
           mercado: element.mercado,
           campeonato: element.campeonato,
@@ -39,15 +40,14 @@ export default {
           created_at: element.created_at
         });
       });
+      this.linhas = dados;
     });
-
-    console.log(this.rows)
   },
   data() {
     return {
       data: {
         columns: this.colunas,
-        rows: []
+        linhas: new Array()
       }
     };
   }

@@ -4,8 +4,9 @@
       <mdb-bar-chart
         :data="barChartData"
         :options="barChartOptions"
-        :width="1000"
+        :width="1800"
         :height="500"
+        style="margin-left:-35%"
         
       ></mdb-bar-chart>
     </mdb-container>

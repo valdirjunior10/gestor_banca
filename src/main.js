@@ -4,6 +4,8 @@ import BootstrapVue from 'bootstrap-vue'
 import VueRouter from 'vue-router';
 import VueGoogleCharts from 'vue-google-charts';
 import VueResource from 'vue-resource';
+import store from './store';
+
 
 import { routes } from '../src/Routes';
 import 'bootstrap-css-only/css/bootstrap.min.css'
@@ -21,5 +23,6 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

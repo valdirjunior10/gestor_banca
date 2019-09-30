@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <b-navbar toggleable="lg" type="dark" variant="info">
        <b-navbar-nav>
         <router-link to="/" class="btn btn-info glyphicon glyphicon-envelope"><b>Manager</b><small>STACK</small></router-link>
